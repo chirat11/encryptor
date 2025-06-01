@@ -14,7 +14,8 @@ encryptor is a command-line cryptographic tool for daily usage that combines cla
 - [macOS](https://github.com/erendemirel/encryptor/releases/latest/download/encryptor-macos.tar.gz) - Download, extract, run `./run-encryptor`
 - [Linux](https://github.com/erendemirel/encryptor/releases/latest/download/encryptor-linux.tar.gz) - Download, extract, run `./run-encryptor`
 
-**Important**: Your antivirus might block the program. You need to allow it.
+> [!IMPORTANT]  
+> Your antivirus might block the program. You need to allow it.
 
 ## How to Use
 
@@ -22,7 +23,7 @@ encryptor is a command-line cryptographic tool for daily usage that combines cla
 
 The first time you run encryptor, it will ask you to set a **master password**. You'll need this password every time you use any feature. 
 
-> [!IMPORTANT]  
+> [!WARNING]  
 > **Remember this password!** - without it you cannot perform any operation
 
 ### Usage - How to Encrypt and Decrypt Data
