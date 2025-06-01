@@ -1,6 +1,7 @@
 use std::env;
 use std::process::Command;
 use std::path::Path;
+use super::utils::add_to_path_windows;
 
 pub fn setup_openssl_environment() -> Result<(), String> {
     if cfg!(target_os = "windows") {
@@ -193,7 +194,7 @@ fn setup_cmake_environment_linux() -> Result<(), String> {
 }
 
 #[cfg(target_os = "windows")]
-fn set_persistent_env_var_windows(name: &str, value: &str) -> Result<(), String> {
+pub fn set_persistent_env_var_windows(name: &str, value: &str) -> Result<(), String> {
     use std::process::Command;
     
     match Command::new("setx")
@@ -213,18 +214,4 @@ fn set_persistent_env_var_windows(name: &str, value: &str) -> Result<(), String>
             Ok(()) // Don't fail the whole process for this
         }
     }
-}
-
-#[cfg(target_os = "windows")]
-fn add_to_path_windows(new_path: &str) -> Result<(), String> {
-    if let Ok(current_path) = env::var("PATH") {
-        if !current_path.contains(new_path) {
-            let new_full_path = format!("{};{}", current_path, new_path);
-            env::set_var("PATH", &new_full_path);
-            
-            let _ = set_persistent_env_var_windows("PATH", &new_full_path);
-        }
-    }
-    
-    Ok(())
 } 

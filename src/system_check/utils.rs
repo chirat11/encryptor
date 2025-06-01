@@ -185,7 +185,7 @@ pub fn add_to_path(path: &str) -> Result<(), String> {
     }
 }
 
-fn add_to_path_windows(path: &str) -> Result<(), String> {
+pub fn add_to_path_windows(path: &str) -> Result<(), String> {
     println!("   Adding {} to PATH...", path);
     
     if let Ok(current_path) = std::env::var("PATH") {
