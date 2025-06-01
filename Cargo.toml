@@ -10,6 +10,10 @@ repository = "https://github.com/erendemirel/encryptor"
 name = "encryptor"
 path = "src/main.rs"
 
+[features]
+default = []
+vendored-openssl = ["openssl/vendored", "openssl-sys/vendored"]
+
 [dependencies]
 rpassword = "7.3"
 aes-gcm = "0.10"
