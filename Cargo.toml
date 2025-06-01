@@ -3,10 +3,8 @@ name = "encryptor"
 version = "0.1.0"
 edition = "2021"
 description = "A practical command-line cryptographic tool with hybrid classical + post-quantum security"
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/your-username/encryptor"
-keywords = ["cryptography", "cli", "encryption", "post-quantum", "security"]
-categories = ["command-line-utilities", "cryptography"]
+license = "MIT"
+repository = "https://github.com/erendemirel/encryptor"
 
 [[bin]]
 name = "encryptor"

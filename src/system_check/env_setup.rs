@@ -54,7 +54,10 @@ fn setup_openssl_environment_windows() -> Result<(), String> {
         env::set_var("OPENSSL_DIR", &dir);
         println!("   OPENSSL_DIR: {}", dir);
         
-        let _ = set_persistent_env_var_windows("OPENSSL_DIR", &dir);
+        #[cfg(target_os = "windows")]
+        {
+            let _ = set_persistent_env_var_windows("OPENSSL_DIR", &dir);
+        }
         
         Ok(())
     } else {
