@@ -86,16 +86,15 @@ fn ensure_keys_exist() -> Result<(), Box<dyn std::error::Error>> {
         
         master_password.zeroize();
         
-        println!("  Security keys created successfully!");
-        println!("   Files: encryptor.key (private, encrypted) and encryptor.pub (public)");
-        println!("   Important: Keep your master password safe.");
+        println!("  First time setup completed successfully!");
+        println!("   Created files: encryptor.key (private, encrypted), encryptor.kyber (private, encrypted) and encryptor.pub (public)");
+        println!("  Important: Keep your master password safe.");
     }
     
     Ok(())
 }
 
 fn validate_password_strength(password: &str, is_master_password: bool) -> Result<(), String> {
-    // Different requirements for master vs protection passwords
     let min_length = if is_master_password { 12 } else { 8 };
     let password_type = if is_master_password { "Master password" } else { "Protection password" };
     
