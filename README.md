@@ -72,11 +72,11 @@ flowchart TD
 
 ## Guide & Troubleshooting 
 
-See [Q&A](aaaaa)
+See [Q&A](https://github.com/erendemirel/encryptor/blob/main/docs/TROUBLESHOOTING.md)
 
 ## How It Works
 
-See [documentation](aaa)
+See [documentation](https://github.com/erendemirel/encryptor/blob/main/docs/DOCUMENTATION.md)
 
 ## Security Notice
 
