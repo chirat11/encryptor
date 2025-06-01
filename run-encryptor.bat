@@ -1,6 +1,6 @@
 @echo off
-title Encryptor - Secure File Protection
-echo Starting Encryptor...
+title encryptor
+echo Starting encryptor...
 echo.
 
 if not exist "encryptor.exe" (
@@ -15,6 +15,6 @@ encryptor.exe
 
 if errorlevel 1 (
     echo.
-    echo Encryptor encountered an error.
+    echo encryptor encountered an error.
     pause
 ) 
