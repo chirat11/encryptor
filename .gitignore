@@ -1,0 +1,72 @@
+# Rust build artifacts
+/target/
+Cargo.lock
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Rust-specific
+**/*.rs.bk
+*.pdb
+
+# Build outputs
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test artifacts
+/test_results/
+
+# Temporary files
+*.tmp
+*.temp
+/temp/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+/logs/
+
+# Environment and configuration files (if containing secrets)
+.env
+.env.local
+.env.production
+config.local.*
+
+# Cryptographic test files and keys (be cautious with real keys)
+*.key
+*.pem
+*.crt
+test_files/
+encrypted_*
+decrypted_*
+
+# Backup files
+*.bak
+*.backup
+
+# Documentation build artifacts
+/book/
+/mdbook/
+
+# Performance and profiling
+perf.data*
+flamegraph.svg
+*.prof
+
+# Windows-specific
+*.pdb
+*.ilk
+*.exp
+*.lib 
