@@ -67,8 +67,8 @@ jobs:
       shell: pwsh
       run: |
         New-Item -ItemType Directory -Force -Path "dist/windows"
-        Copy-Item "target/${{ matrix.target }}/release/encryptor.exe" "dist/windows/encryptor"
-        Copy-Item "run-encryptor.bat" "dist/windows/run-encryptor"
+        Copy-Item "target/${{ matrix.target }}/release/encryptor.exe" "dist/windows/"
+        Copy-Item "run-encryptor.bat" "dist/windows/"
         
         Compress-Archive -Path "dist/windows/*" -DestinationPath "encryptor-windows.zip"
 
@@ -84,9 +84,9 @@ jobs:
         
         mkdir -p "dist/$platform"
         cp "target/${{ matrix.target }}/release/encryptor" "dist/$platform/"
-        cp "run-encryptor.sh" "dist/$platform/run-encryptor"
+        cp "run-encryptor.sh" "dist/$platform/"
         chmod +x "dist/$platform/encryptor"
-        chmod +x "dist/$platform/run-encryptor"
+        chmod +x "dist/$platform/run-encryptor.sh"
         
         tar -czf "encryptor-$platform.tar.gz" -C "dist/$platform" .
 
