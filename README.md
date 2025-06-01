@@ -79,9 +79,14 @@ See [Q&A](https://github.com/erendemirel/encryptor/blob/main/docs/TROUBLESHOOTIN
 
 See [documentation](https://github.com/erendemirel/encryptor/blob/main/docs/DOCUMENTATION.md)
 
+
 ## Security Notice
 
 This software has not been independently security audited. Use at your own risk. It is provided "as-is" without warranty of any kind.
+
+## Legal Notice
+
+This software is intended for legitimate purposes only. Do not use this software for illegal activities. Users are solely responsible for complying with all applicable laws.
 
 ## License
 
