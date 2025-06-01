@@ -10,9 +10,9 @@ encryptor is a command-line cryptographic tool for daily usage that combines cla
 ## Installation
 
 **Quick Download:**
-- [Windows](https://github.com/user/encryptor/releases/latest/download/encryptor-windows.zip) - Download, extract, double-click `run-encryptor.bat`
-- [macOS](https://github.com/user/encryptor/releases/latest/download/encryptor-macos.tar.gz) - Download, extract, run `./run-encryptor.sh`
-- [Linux](https://github.com/user/encryptor/releases/latest/download/encryptor-linux.tar.gz) - Download, extract, run `./run-encryptor.sh`
+- [Windows](https://github.com/erendemirel/encryptor/releases/latest/download/encryptor-windows.zip) - Download, extract, double-click `run-encryptor`
+- [macOS](https://github.com/erendemirel/encryptor/releases/latest/download/encryptor-macos.tar.gz) - Download, extract, run `./run-encryptor`
+- [Linux](https://github.com/erendemirel/encryptor/releases/latest/download/encryptor-linux.tar.gz) - Download, extract, run `./run-encryptor`
 
 **Important**: Your antivirus might block the program. You need to allow it.
 

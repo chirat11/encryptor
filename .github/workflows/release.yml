@@ -68,8 +68,8 @@ jobs:
       run: |
         $version = "${{ github.ref_name }}".Substring(1)  # Remove 'v' prefix
         New-Item -ItemType Directory -Force -Path "dist/windows"
-        Copy-Item "target/${{ matrix.target }}/release/encryptor.exe" "dist/windows/"
-        Copy-Item "run-encryptor.bat" "dist/windows/"
+        Copy-Item "target/${{ matrix.target }}/release/encryptor.exe" "dist/windows/encryptor"
+        Copy-Item "run-encryptor.bat" "dist/windows/run-encryptor"
         
         Compress-Archive -Path "dist/windows/*" -DestinationPath "encryptor-windows-$version.zip"
 
@@ -88,9 +88,9 @@ jobs:
         
         mkdir -p "dist/$platform"
         cp "target/${{ matrix.target }}/release/encryptor" "dist/$platform/"
-        cp "run-encryptor.sh" "dist/$platform/"
+        cp "run-encryptor.sh" "dist/$platform/run-encryptor"
         chmod +x "dist/$platform/encryptor"
-        chmod +x "dist/$platform/run-encryptor.sh"
+        chmod +x "dist/$platform/run-encryptor"
         
         tar -czf "encryptor-$platform-$version.tar.gz" -C "dist/$platform" .
 
