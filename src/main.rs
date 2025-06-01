@@ -320,8 +320,6 @@ fn load_all_keys_with_single_prompt() -> Result<((pqcrypto_kyber::kyber1024::Pub
     
     let kyber_key_path = PathBuf::from("encryptor.kyber");
     let kyber_keys = if !kyber_key_path.exists() {
-        // Generate new Kyber keys on first use
-        println!("Generating master encryption keys...");
         let (public_key, secret_key) = crypto::hybrid_encryption::generate_kyber_keypair();
         
         // Create combined key data 
@@ -341,7 +339,6 @@ fn load_all_keys_with_single_prompt() -> Result<((pqcrypto_kyber::kyber1024::Pub
         
         fs::write(&kyber_key_path, encrypted_keys)?;
         
-        println!("✓ Master encryption keys created with quantum-resistant protection!");
         (public_key, secret_key)
     } else {
         let encrypted_data = fs::read(&kyber_key_path)?;
