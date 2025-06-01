@@ -3,19 +3,12 @@ use std::io::{self, Write};
 use std::path::PathBuf;
 use zeroize::Zeroize;
 
-mod system_check;
 mod crypto;
 
 use pqcrypto_traits::kem::{SecretKey as SecretKeyTrait, PublicKey as KemPublicKey, Ciphertext as CiphertextTrait, SharedSecret as SharedSecretTrait};
 use pqcrypto_traits::sign::{PublicKey as PublicKeyTrait, SecretKey as SignSecretKeyTrait};
 
 fn main() {
-    if let Err(e) = system_check::check_all_requirements() {
-        eprintln!("\nSystem check failed: {}", e);
-        eprintln!("Please install the missing requirements and try again.");
-        std::process::exit(1);
-    }
-
     if let Err(e) = ensure_keys_exist() {
         eprintln!("Failed to setup keys: {}", e);
         std::process::exit(1);
