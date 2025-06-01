@@ -51,13 +51,13 @@ jobs:
         # Install build tools needed for vendored OpenSSL
         xcode-select --install 2>/dev/null || true
 
-    - name: Build
-      run: |
-        if [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-          cargo build --release --target ${{ matrix.target }} --features vendored-openssl
-        else
-          cargo build --release --target ${{ matrix.target }}
-        fi
+    - name: Build (Windows/Linux)
+      if: matrix.os != 'macos-latest'
+      run: cargo build --release --target ${{ matrix.target }}
+
+    - name: Build (macOS)
+      if: matrix.os == 'macos-latest'
+      run: cargo build --release --target ${{ matrix.target }} --features vendored-openssl
 
     - name: Create package (Windows)
       if: matrix.os == 'windows-latest'
